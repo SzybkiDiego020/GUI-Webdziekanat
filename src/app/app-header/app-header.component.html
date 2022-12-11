@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<div class="header-bar">
+
+  <div class="logo-div">
+    <a href="https://p.lodz.pl">
+      <img src="assets/logo.svg" alt="Logo Politechniki Łódzkiej">
+    </a>
+  </div>
+
+  <div class="navigation-div">
+    <div></div>
+    <div class="nav-button">
+      <a href="http://localhost:4200/">
+        <span class="material-symbols-outlined">home</span>
+        <span>HOME</span>
+      </a>
+    </div>
+
+    <div class="nav-button">
+      <a href="https://virtul.p.lodz.pl/virtul/">
+        <span class="material-symbols-outlined">school</span>
+        <span>VIRTUL</span>
+      </a>
+    </div>
+
+    <div class="nav-button">
+      <a href="https://outlook.office365.com/mail/">
+        <span class="material-symbols-outlined">mail</span>
+        <span>E-MAIL</span>
+      </a>
+    </div>
+
+    <div class="nav-button">
+      <a href="https://edu.p.lodz.pl">
+        <span class="material-symbols-outlined">badge</span>
+        <span>WIKAMP</span>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="login-div">
+    <button (click)="changeLoggedInState()" class="login-button">
+      {{loggedIn ? "LOG OUT": "LOG IN"}}
+    </button>
+  </div>
+
+</div>

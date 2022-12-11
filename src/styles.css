@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+  font-family: Roboto, "Helvetica Nueu", sans-serif;
+}
+
+app-header{
+  color: var(--light-text-color);
+}
+
+:root{
+  --primary-color: #8B0304;
+  --primary-color-hover: #AF0404;
+  --primary-color-active: #E10505;
+  --light-text-color: #FAEBD7FF;
+}
