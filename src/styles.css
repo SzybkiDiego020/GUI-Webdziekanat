@@ -13,3 +13,6 @@ app-header{
   --primary-color-active: #E10505;
   --light-text-color: #FAEBD7FF;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
