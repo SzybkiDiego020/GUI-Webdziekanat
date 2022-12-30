@@ -1,0 +1,21 @@
+h1 {
+  color: #666666;
+  font-size: 18px;
+  margin: 10px 0;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+hr {
+  border: 0;
+  border-top: 2px solid var(--primary-color);
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+.indented_p {
+  text-indent: 1.5em;
+  text-align: justify;
+}

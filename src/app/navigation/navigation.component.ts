@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {LoginService} from "../login-service/login.service";
 
 @Component({
-  selector: 'app-fees',
-  templateUrl: './fees.component.html',
-  styleUrls: ['./fees.component.css']
+  selector: 'app-navigation',
+  templateUrl: './navigation.component.html',
+  styleUrls: ['./navigation.component.css']
 })
-export class FeesComponent implements OnInit {
+export class NavigationComponent implements OnInit {
 
   loggedIn: boolean | undefined;
   constructor(private loginService: LoginService) {

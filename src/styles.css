@@ -3,6 +3,10 @@
   font-family: Roboto, "Helvetica Nueu", sans-serif;
 }
 
+html{
+  background-color: #F0F0F0;
+}
+
 app-header{
   color: var(--light-text-color);
 }
@@ -16,3 +20,4 @@ app-header{
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

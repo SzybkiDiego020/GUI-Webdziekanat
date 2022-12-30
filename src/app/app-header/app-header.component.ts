@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {LoginService} from "../login-service/login.service";
 
 @Component({
   selector: 'app-header',
@@ -7,18 +8,18 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class AppHeaderComponent implements OnInit {
 
-  loggedIn: boolean = true;
-
-  @Output() changeLoggedIn: EventEmitter<boolean> = new EventEmitter<boolean>();
-  constructor() { }
+  loggedIn: boolean | undefined;
+  constructor(private loginService: LoginService) {
+  }
 
   ngOnInit(): void {
+    this.loginService.loggedIn.subscribe(state => this.loggedIn = state);
   }
 
   changeLoggedInState() {
-    this.loggedIn = !this.loggedIn;
-    this.changeLoggedIn.emit((this.loggedIn));
-    window.location.reload();
+    if(this.loggedIn && !(location.href.includes("information") ||
+      location.href.includes("registration") || location.href.includes("home"))){document.location.href="http://localhost:4200/home"}
+    this.loginService.changeLoggedIn(!this.loggedIn);
   }
 
 }

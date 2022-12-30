@@ -5,13 +5,16 @@ import { AppComponent } from './app.component';
 import {RouterModule, Routes} from "@angular/router";
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from "./home/home.component";
 import { InformationComponent } from './information/information.component';
 import { PersonalDataComponent } from './personal-data/personal-data.component';
 import { CollegeDataComponent } from './college-data/college-data.component';
 import { ReportCardComponent } from './report-card/report-card.component';
 import { FeesComponent } from './fees/fees.component';
 import { RegistrationComponent } from './registration/registration.component';
+import {LoginService} from "./login-service/login.service";
+import { NavigationComponent } from './navigation/navigation.component';
+import {MatTableModule} from "@angular/material/table";
 
 
 const appRoutes: Routes = [
@@ -36,14 +39,16 @@ const appRoutes: Routes = [
     CollegeDataComponent,
     ReportCardComponent,
     FeesComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
+    MatTableModule,
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,47 @@
+<div class="main">
+  <div class="navigation">
+
+    <div class="navigation-button" *ngIf="loggedIn">
+      <a href="http://localhost:4200/personal_data">
+        <span class="material-symbols-outlined">person</span>
+        <span>Personal Data</span>
+      </a>
+    </div>
+
+    <div class="navigation-button" *ngIf="loggedIn">
+      <a href="http://localhost:4200/college_data">
+        <span class="material-symbols-outlined">history_edu</span>
+        <span>College Data</span>
+      </a>
+    </div>
+
+    <div class="navigation-button" *ngIf="loggedIn">
+      <a href="http://localhost:4200/report_card">
+        <span class="material-symbols-outlined">lab_profile</span>
+        <span>Report Card</span>
+      </a>
+    </div>
+
+    <div class="navigation-button" *ngIf="loggedIn">
+      <a href="http://localhost:4200/fees">
+        <span class="material-symbols-outlined">payments</span>
+        <span>Fees</span>
+      </a>
+    </div>
+
+    <div class="navigation-button">
+      <a href="http://localhost:4200/registration">
+        <span class="material-symbols-outlined">how_to_reg</span>
+        <span>Registration</span>
+      </a>
+    </div>
+
+    <div class="navigation-button">
+      <a href="http://localhost:4200/information">
+        <span class="material-symbols-outlined">info</span>
+        <span>Information</span>
+      </a>
+    </div>
+
+  </div>
+</div>
