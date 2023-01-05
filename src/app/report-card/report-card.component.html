@@ -1,1 +1,76 @@
-<p>report-card works!</p>
+<h1>Report Card</h1>
+<hr><br>
+<div *ngIf="loggedIn">
+  <p style="color: red;">
+    Dear Users,
+  </p>
+  <p class="indented_p" style="color: red">
+    the University Information Technology Center together with the E-Learning Center has launched the introduction of
+    PE grades directly from the WIKAMP platform for teachers. Therefore, please direct all comments to teachers,
+    especially since they have an overview of your situation and the information about the reason why the grade will
+    not be sent. A positive assessment message makes it visible in the WEBDean's Office.
+  </p>
+  <br><hr><br>
+  <h2>Semester</h2>
+  <div class="semester_general_div">
+    <table class="mat-table" id="semester_overview">
+      <tr class="mat-row" >
+        <td class="mat-cell">
+          <select class='select-option'
+                  #mySelect
+                  (change)='onOptionsSelected(mySelect.value)'>
+            <option class='option'
+                    *ngFor='let option of dropDownSource'
+                    [value]="option.value">{{option.text}}</option>
+          </select>
+        </td>
+        <td class="mat-cell">Average grade:</td>
+        <td class="mat-cell" *ngIf="semester==1">{{semesterSource[0]['average_grade']}}</td>
+        <td class="mat-cell" *ngIf="semester==2">{{semesterSource[1]['average_grade']}}</td>
+        <td class="mat-cell" *ngIf="semester==3">{{semesterSource[2]['average_grade']}}</td>
+        <td class="mat-cell">ECTS Points:</td>
+        <td class="mat-cell" *ngIf="semester==1">{{semesterSource[0]['points']}}</td>
+        <td class="mat-cell" *ngIf="semester==2">{{semesterSource[1]['points']}}</td>
+        <td class="mat-cell" *ngIf="semester==3">{{semesterSource[2]['points']}}</td>
+      </tr>
+    </table>
+  </div>
+  <br>
+  <div class="semester_subjects_div">
+    <table mat-table [dataSource]="current_semester_data" class="mat-elevation-z8" id="subjects_table">
+      <ng-container matColumnDef="code">
+        <th mat-header-cell *matHeaderCellDef> Code </th>
+        <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="instructor">
+        <th mat-header-cell *matHeaderCellDef> Instructor </th>
+        <td mat-cell *matCellDef="let element"> {{element.instructor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="ects">
+        <th mat-header-cell *matHeaderCellDef> ECTS </th>
+        <td mat-cell *matCellDef="let element"> {{element.ects}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="final_grade">
+        <th mat-header-cell *matHeaderCellDef> Final grade </th>
+        <td mat-cell *matCellDef="let element"> {{element.final_grade}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="subjectColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: subjectColumns;"></tr>
+    </table>
+  </div>
+</div>
+<div *ngIf="!loggedIn">
+  <br>
+  <p class="indented_p">
+    You may not view your report card without logging in.
+  </p>
+</div>

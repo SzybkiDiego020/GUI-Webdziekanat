@@ -1,0 +1,86 @@
+h1{
+  color: #666666;
+  font-size: 20px;
+  margin: 10px 0;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+#fees {
+  box-shadow: none;
+  background-color: #F0F0F0;
+}
+
+#fees .mat-cell{
+  border-bottom: none;
+}
+
+#fees .mat-cell:nth-child(2) {
+  text-align: left;
+}
+
+#fees  .mat-cell:nth-child(4) {
+  text-align: left;
+}
+
+#payments .mat-cell:nth-child(6) {
+  width: 10%;
+}
+
+#payments .mat-header-cell {
+  padding: 2px;
+  font-size: 14px;
+  border: 1px solid white;
+  background-color: lightgray;
+  text-align: center;
+}
+
+#payments .mat-cell {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 3%;
+}
+
+.table_div {
+  align-self: center;
+  justify-self: center;
+  place-self: center;
+}
+
+.mat-table {
+  text-align: center;
+}
+
+.mat-column-weight{
+  border-left: 1px solid black;
+}
+
+
+h2 {
+  color: #666666;
+  font-size: 16px;
+  margin: 10px 0;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+hr {
+  border: 0;
+  border-top: 2px solid var(--primary-color);
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+.indented_p {
+  text-indent: 1.5em;
+  text-align: justify;
+}
+
+.interest_calculator_link {
+  color: var(--primary-color);
+}

@@ -2,27 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import {LoginService} from "../login-service/login.service";
 
 export interface basicData{
-  position: string;
-  name: string|null;
-  weight: string;
-  symbol: string|null;
+  entry1: string;
+  value1: string|null;
+  entry2: string;
+  value2: string|null;
 }
 
 const BASIC_DATA: basicData[] = [
-  {position: 'First Name:', name: 'Tomasz', weight: 'Surname:', symbol: 'Wójtowicz'},
-  {position: "Date of birth:", name: "1844-10-15", weight: "Place of birth:", symbol: "unknown"},
-  {position: "Name of the Father:", name: "Carl", weight: "PESEL:", symbol: "12345678901"}
+  {entry1: 'First name:', value1: 'Tomasz', entry2: 'Surname:', value2: 'Wójtowicz'},
+  {entry1: "Date of birth:", value1: "1844-10-15", entry2: "Place of birth:", value2: "unknown"},
+  {entry1: "Name of the Father:", value1: "Carl", entry2: "PESEL:", value2: "12345678901"}
 ];
 
 const CONTACT_DATA: basicData[] = [
-  {position: 'Street:', name: localStorage.getItem("street")!=null? localStorage.getItem("street"): "Some st.",
-    weight: 'City:', symbol: localStorage.getItem("city")!=null? localStorage.getItem("city"): "Łódź"},
-  {position: "House No.:", name: localStorage.getItem("house")!=null? localStorage.getItem("house"): "007",
-    weight: "Voivodeship:", symbol: localStorage.getItem("voi")!=null? localStorage.getItem("voi"): "łódzkie"},
-  {position: "Apartment No.:", name: localStorage.getItem("appartment")!=null? localStorage.getItem("appartment"): "999",
-    weight: "Postcode:", symbol: localStorage.getItem("postcode")!=null? localStorage.getItem("postcode"): "S12-345"},
-  {position: "Phone:", name: localStorage.getItem("phone")!=null? localStorage.getItem("phone"): "+48 123-123-123",
-    weight:"Contact Data confirmed:", symbol:"No"}
+  {entry1: 'Street:', value1: localStorage.getItem("street")!=null? localStorage.getItem("street"): "Some st.",
+    entry2: 'City:', value2: localStorage.getItem("city")!=null? localStorage.getItem("city"): "Łódź"},
+  {entry1: "House No.:", value1: localStorage.getItem("house")!=null? localStorage.getItem("house"): "007",
+    entry2: "Voivodeship:", value2: localStorage.getItem("voi")!=null? localStorage.getItem("voi"): "łódzkie"},
+  {entry1: "Apartment No.:", value1: localStorage.getItem("apartment")!=null? localStorage.getItem("apartment"): "999",
+    entry2: "Postcode:", value2: localStorage.getItem("postcode")!=null? localStorage.getItem("postcode"): "12-345"},
+  {entry1: "Phone:", value1: localStorage.getItem("phone")!=null? localStorage.getItem("phone"): "+48 123-123-123",
+    entry2:"Contact Data confirmed:", value2:"No"}
 ];
 
 
@@ -34,7 +34,7 @@ const CONTACT_DATA: basicData[] = [
 export class PersonalDataComponent implements OnInit {
 
   loggedIn: boolean | undefined;
-  basicColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  basicColumns: string[] = ['entry1', 'value1', 'entry2', 'value2'];
   basicSource = BASIC_DATA;
   contactSource = CONTACT_DATA;
   constructor(private loginService: LoginService) {
@@ -46,12 +46,13 @@ export class PersonalDataComponent implements OnInit {
   }
 
   updateData(street: HTMLInputElement, city: HTMLInputElement, house: HTMLInputElement,
-             voi: HTMLInputElement, appartment: HTMLInputElement, postcode: HTMLInputElement,
+             voi: HTMLInputElement, apartment: HTMLInputElement, postcode: HTMLInputElement,
              phone: HTMLInputElement){
     localStorage.setItem("street", street.value);
     localStorage.setItem("city", city.value);
     localStorage.setItem("house", house.value);
     localStorage.setItem("voi", voi.value);
+    localStorage.setItem("apartment", apartment.value);
     localStorage.setItem("postcode", postcode.value);
     localStorage.setItem("phone", phone.value);
     document.location.reload();
